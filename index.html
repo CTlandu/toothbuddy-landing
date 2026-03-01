@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToothBuddy – Better Brushing for the Whole Family</title>
+<link rel="icon" type="image/png" href="tooth.png">
+<link rel="apple-touch-icon" href="tooth.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@700;800&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
 <style>
 :root {
   --coral:   #F4A6A6;
@@ -24,6 +26,19 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Nunito',sans-serif;background:#FFFBF5;color:var(--ink);overflow-x:hidden}
+
+/* zh-CN 语言下，使用更可爱的中文字体 */
+html:lang(zh-CN) body{
+  font-family:'Noto Sans SC','Nunito',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+html:lang(zh-CN) .hero h1,
+html:lang(zh-CN) .wl-title,
+html:lang(zh-CN) .sec-head h2,
+html:lang(zh-CN) .for-card h3,
+html:lang(zh-CN) .fc h3,
+html:lang(zh-CN) nav .logo{
+  font-family:'ZCOOL KuaiLe','Baloo 2',cursive;
+}
 
 /* grain */
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.025;
@@ -46,13 +61,15 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .logo img{height:1.4em;width:auto;vertical-align:middle}
 .inline-tooth{height:1em;width:auto;vertical-align:middle}
 /* SVG 图标 */
-.ico{display:inline-block;vertical-align:middle;fill:currentColor}
+.ico{display:inline-block;vertical-align:middle}
 .ico-s{width:1em;height:1em}
 .ico-m{width:1.4em;height:1.4em}
 .ico-l{width:2.5rem;height:2.5rem}
 .ico-xl{width:3rem;height:3rem}
+/* 星星和心形是实心图标，单独设置 fill */
 .stars-row .ico{fill:var(--gold)}
 .ico-heart{fill:var(--coral-d)}
+.hero-tag .ico{width:1.4em;height:1.4em}
 .nav-right{display:flex;align-items:center;gap:14px}
 .pill{background:linear-gradient(135deg,var(--coral),var(--coral-d));color:#fff;font-size:.68rem;
   font-weight:800;padding:5px 13px;border-radius:30px;letter-spacing:.8px;text-transform:uppercase}
@@ -71,9 +88,9 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 /* ── HERO ── */
 .hero{position:relative;z-index:5;text-align:center;padding:88px 24px 48px}
-.hero-tag{display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:center;background:rgba(244,166,166,.15);
+.hero-tag{display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:center;background:rgba(244,166,166,.15);
   border:1px solid rgba(244,166,166,.4);border-radius:40px;padding:7px 18px;
-  font-size:.76rem;font-weight:800;color:var(--roseDk);letter-spacing:.5px;text-transform:uppercase;
+  font-size:.9rem;font-weight:800;color:var(--roseDk);letter-spacing:.5px;text-transform:uppercase;
   margin-bottom:24px;animation:fadeD .5s ease both}
 .hero-tooth{display:block;margin:0 auto 16px;width:7rem;height:auto;
   animation:bounce .9s .1s cubic-bezier(.34,1.56,.64,1) both;
@@ -213,7 +230,9 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-tag"><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.5 4.5L18 8l-3.5 2.5L16 15l-4-2.5L8 15l1-4.5L6 8l4.5-1.5L12 2z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span data-en="Swift Student Challenge 2025" data-zh="Swift 学生挑战赛 2025">Swift Student Challenge 2025</span></div>
+  <div class="hero-tag"><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
+  </svg><span data-en="Swift Student Challenge 2026 Candidate" data-zh="Swift 学生挑战赛 2026 候选项目">Swift Student Challenge 2026 Candidate</span></div>
   <img src="tooth.png" alt="ToothBuddy" class="hero-tooth">
 
   <!-- ══ LANGUAGE SWITCHER ══ -->
@@ -247,15 +266,12 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
         Be the first to know when ToothBuddy hits the App Store
       </div>
       <div class="field">
-        <div class="row2">
-          <input type="text" id="inp-name" placeholder="Your name" data-ph-en="Your name" data-ph-zh="你的名字" maxlength="50">
-          <select id="inp-role">
-            <option value="" disabled selected data-en="I'm a…" data-zh="我是…">I'm a…</option>
-            <option value="parent" data-en="Parent" data-zh="孩子家长">Parent</option>
-            <option value="adult" data-en="Adult user" data-zh="成人用户">Adult user</option>
-            <option value="both" data-en="Both" data-zh="两者都是">Both</option>
-          </select>
-        </div>
+        <select id="inp-role">
+          <option value="" disabled selected data-en="I'm a…" data-zh="我是…">I'm a…</option>
+          <option value="parent" data-en="Parent" data-zh="孩子家长">Parent</option>
+          <option value="adult" data-en="Adult user" data-zh="成人用户">Adult user</option>
+          <option value="both" data-en="Both" data-zh="两者都是">Both</option>
+        </select>
         <input type="email" id="inp-email" placeholder="Email address" data-ph-en="Email address" data-ph-zh="邮箱地址" maxlength="120">
       </div>
       <div class="err" id="err-msg"
@@ -264,28 +280,20 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
         Please fill in all fields with a valid email.
       </div>
       <button class="cta" id="submit-btn" onclick="handleSubmit()">
-        <svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-3.5 2.5L16 17l-4-2.5L8 17l1-5.5L6 9l4.5-1.5L12 3z"/></svg><span data-en="Join the Waitlist" data-zh="加入等候名单">Join the Waitlist</span>
+        <svg class="ico ico-s" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2.5 0 5 2.5 5 6v5l-5 7-5-7V8c0-3.5 2.5-6 5-6z"/><circle cx="12" cy="9" r="1.5" fill="white"/><path d="M9 13l-3 4h3M15 13l3 4h-3"/></svg><span data-en="Join the Waitlist" data-zh="加入等候名单">Join the Waitlist</span>
       </button>
-      <div class="fine"><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11V7a4 4 0 118 0v4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span data-en="No spam. Just a launch notification. Unsubscribe anytime."
-           data-zh="不发垃圾邮件，仅在上线时通知你，随时可退订。">No spam. Just a launch notification. Unsubscribe anytime.</span></div>
-      <div class="cnt-row">
-        <div class="cnt-pill" id="cnt-main">–</div>
-        <div class="cnt-lbl" data-en="people already on the list" data-zh="人已加入名单">people already on the list</div>
-      </div>
+      <div class="fine"><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11V7a4 4 0 118 0v4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span data-en="No spam. Just a launch notification."
+           data-zh="不发垃圾邮件，仅在上线时通知你">No spam. Just a launch notification.</span></div>
     </div>
 
     <!-- SUCCESS -->
     <div class="success" id="success-area">
-      <span class="success-ico"><svg class="ico ico-xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7-5.5-4h7l2-7z" fill="var(--gold)"/><circle cx="12" cy="12" r="10" fill="none" stroke="var(--coral-d)" stroke-width="1.5"/></svg></span>
+      <span class="success-ico"><svg class="ico ico-xl" viewBox="0 0 24 24" fill="none" stroke="var(--coral-d)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg></span>
       <h3 data-en="You're on the list!" data-zh="加入成功！">You're on the list!</h3>
       <p data-en="We'll send you one email the moment ToothBuddy hits the App Store. Thank you! <img src='tooth.png' alt='' class='inline-tooth'>"
          data-zh="ToothBuddy 正式上线时，我们会立刻通知你。感谢你的支持！<img src='tooth.png' alt='' class='inline-tooth'>">
         We'll send you one email the moment ToothBuddy hits the App Store. Thank you! <img src="tooth.png" alt="" class="inline-tooth">
       </p>
-      <div class="cnt-row" style="margin-top:16px">
-        <div class="cnt-pill" id="cnt-success">–</div>
-        <div class="cnt-lbl" data-en="people joined" data-zh="人已加入">people joined</div>
-      </div>
     </div>
   </div>
 </section>
@@ -301,13 +309,13 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
   </div>
   <div class="for-grid">
     <div class="for-card">
-      <span class="for-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="6" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M8 10v11M16 10v11M12 16v5"/></svg></span>
+      <span class="for-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="6" r="3"/><path d="M4 21v-3a5 5 0 0110 0v3"/><circle cx="18" cy="8" r="2"/><path d="M15 21v-2a3.5 3.5 0 017 0v2"/></svg></span>
       <h3 data-en="For Parents" data-zh="家长">For Parents</h3>
       <p data-en="Parents getting kids to brush without the battle."
          data-zh="让家长轻松带孩子刷牙。">Parents getting kids to brush without the battle.</p>
     </div>
     <div class="for-card">
-      <span class="for-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/></svg></span>
+      <span class="for-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0116 0v2"/></svg></span>
       <h3 data-en="For Adults" data-zh="成人">For Adults</h3>
       <p data-en="Adults building better brushing habits."
          data-zh="帮助成人养成更好的刷牙习惯。">Adults building better brushing habits.</p>
@@ -326,19 +334,19 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
   </div>
   <div class="feats-grid">
     <div class="fc">
-      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><circle cx="8" cy="11" r="1.5"/><circle cx="16" cy="11" r="1.5"/><path d="M8 14h8" stroke="currentColor" stroke-width="1" fill="none"/><rect x="10" y="4" width="4" height="2" rx=".5"/></svg></span>
+      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h12v8a6 6 0 01-12 0V2z"/><path d="M6 2H2v3a4 4 0 004 4M18 2h4v3a4 4 0 01-4 4"/><path d="M12 16v4M8 20h8"/></svg></span>
       <h3 data-en="Gamification" data-zh="游戏化">Gamification</h3>
       <p data-en="Stars, streaks, achievements, and badges — turn brushing into a game kids actually want to play."
          data-zh="星星、连续打卡、成就徽章 — 把刷牙变成孩子真正想玩的游戏。">Stars, streaks, achievements, and badges — turn brushing into a game kids actually want to play.</p>
     </div>
     <div class="fc">
-      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="14" height="14" rx="2"/><circle cx="9" cy="9" r="1.5"/><circle cx="15" cy="9" r="1.5"/><rect x="9" y="13" width="6" height="2" rx=".5"/><path d="M12 2v2M8 2v1M16 2v1"/></svg></span>
+      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 014 0v2M16 7V5a2 2 0 00-2-2"/><circle cx="12" cy="14" r="3"/><path d="M9 14h6M12 11v6"/></svg></span>
       <h3 data-en="AI Brushing Quality" data-zh="AI 刷牙质量检测">AI Brushing Quality</h3>
       <p data-en="AI-driven feedback on coverage and technique. Know exactly where you missed — and get better every time."
          data-zh="AI 实时反馈覆盖率和技巧，告诉你哪里没刷到，每次都在进步。">AI-driven feedback on coverage and technique. Know exactly where you missed — and get better every time.</p>
     </div>
     <div class="fc">
-      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="8" cy="6" r="2"/><circle cx="16" cy="6" r="2"/><path d="M4 20c0-2.5 1.8-4 4-4s4 1.5 4 4M14 20c0-2.5 1.8-4 4-4s4 1.5 4 4"/><path d="M12 10v4M10 12h4" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span>
+      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.4 10.8l7.2-4.2M8.4 13.2l7.2 4.2"/></svg></span>
       <h3 data-en="Share with Parents & Dentists" data-zh="家长与牙医数据共享">Share with Parents & Dentists</h3>
       <p data-en="Export reports and share brushing data with parents or your dentist for better care coordination."
          data-zh="导出报告，与家长或牙医共享刷牙数据，让护理更协同。">Export reports and share brushing data with parents or your dentist for better care coordination.</p>
@@ -347,8 +355,7 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
 </section>
 
 <footer>
-  Made with <img src="tooth.png" alt="" class="inline-tooth"> + <svg class="ico ico-s ico-heart" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> · Swift Student Challenge 2025<br>
-  © 2025 ToothBuddy · <a href="mailto:hello@toothbuddy.app">hello@toothbuddy.app</a>
+  © 2026 ToothBuddy · <a href="mailto:jizhoutang@outlook.com">jizhoutang@outlook.com</a>
 </footer>
 
 <!--
@@ -375,8 +382,7 @@ STEP 3 — Paste the Web App URL below where it says REPLACE_WITH_YOUR_URL
 
 <script>
 // ─── CONFIG ───────────────────────────────────────────
-const SHEETS_URL = 'REPLACE_WITH_YOUR_APPS_SCRIPT_URL'; // ← 把上面拿到的 Apps Script URL 粘贴到这里
-const COUNT_KEY  = 'toothbuddy-v2-count';
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxYNTszwyZzoTp1uA6lx6s06sTo3mf8d0wOAQO-vl53sGPYIumoEj_bovDbyo_EKEcb/exec'; // ← 把上面拿到的 Apps Script URL 粘贴到这里
 let   LANG       = 'en';
 
 // ─── LANGUAGE ─────────────────────────────────────────
@@ -410,33 +416,15 @@ function setLang(lang) {
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
 }
 
-// ─── COUNTER ──────────────────────────────────────────
-async function getCount() {
-  try {
-    const r = await window.storage.get(COUNT_KEY, true);
-    return r ? (parseInt(r.value) || 0) : 0;
-  } catch { return 0; }
-}
-async function incrementCount() {
-  const n = (await getCount()) + 1;
-  try { await window.storage.set(COUNT_KEY, String(n), true); } catch {}
-  return n;
-}
-async function refreshCounter() {
-  const n = await getCount();
-  document.getElementById('cnt-main').textContent = n || '0';
-}
-
 // ─── SUBMIT ───────────────────────────────────────────
 async function handleSubmit() {
-  const name  = document.getElementById('inp-name').value.trim();
   const email = document.getElementById('inp-email').value.trim();
   const role  = document.getElementById('inp-role').value;
   const errEl = document.getElementById('err-msg');
   const btn   = document.getElementById('submit-btn');
 
   errEl.classList.remove('on');
-  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !role) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !role) {
     errEl.classList.add('on');
     return;
   }
@@ -446,17 +434,13 @@ async function handleSubmit() {
     ? '<span class="spin"></span>提交中…'
     : '<span class="spin"></span>Joining…';
 
-  if (SHEETS_URL !== 'REPLACE_WITH_YOUR_URL') {
-    fetch(SHEETS_URL, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, role, lang: LANG, ts: new Date().toISOString() })
-    }).catch(() => {});
-  }
-
-  const total = await incrementCount();
-  document.getElementById('cnt-main').textContent    = total;
-  document.getElementById('cnt-success').textContent = total;
+    if (SHEETS_URL) {
+     fetch(SHEETS_URL, {
+       method: 'POST', mode: 'no-cors',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify({ email, role, lang: LANG, ts: new Date().toISOString() })
+     }).catch(() => {});
+   }
 
   document.getElementById('form-area').style.display = 'none';
   document.getElementById('success-area').classList.add('on');
@@ -470,8 +454,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && document.getElementById('form-area').style.display !== 'none')
     handleSubmit();
 });
-
-refreshCounter();
 </script>
 </body>
 </html>
