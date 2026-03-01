@@ -43,6 +43,16 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
   padding:15px 48px;background:rgba(255,251,245,.75);backdrop-filter:blur(16px);
   border-bottom:1px solid rgba(224,136,136,.12)}
 .logo{font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800;color:var(--coral-d);display:flex;align-items:center;gap:8px}
+.logo img{height:1.4em;width:auto;vertical-align:middle}
+.inline-tooth{height:1em;width:auto;vertical-align:middle}
+/* SVG 图标 */
+.ico{display:inline-block;vertical-align:middle;fill:currentColor}
+.ico-s{width:1em;height:1em}
+.ico-m{width:1.4em;height:1.4em}
+.ico-l{width:2.5rem;height:2.5rem}
+.ico-xl{width:3rem;height:3rem}
+.stars-row .ico{fill:var(--gold)}
+.ico-heart{fill:var(--coral-d)}
 .nav-right{display:flex;align-items:center;gap:14px}
 .pill{background:linear-gradient(135deg,var(--coral),var(--coral-d));color:#fff;font-size:.68rem;
   font-weight:800;padding:5px 13px;border-radius:30px;letter-spacing:.8px;text-transform:uppercase}
@@ -61,11 +71,11 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 /* ── HERO ── */
 .hero{position:relative;z-index:5;text-align:center;padding:88px 24px 48px}
-.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(244,166,166,.15);
+.hero-tag{display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:center;background:rgba(244,166,166,.15);
   border:1px solid rgba(244,166,166,.4);border-radius:40px;padding:7px 18px;
   font-size:.76rem;font-weight:800;color:var(--roseDk);letter-spacing:.5px;text-transform:uppercase;
   margin-bottom:24px;animation:fadeD .5s ease both}
-.hero-tooth{font-size:7rem;display:block;margin:0 auto 16px;
+.hero-tooth{display:block;margin:0 auto 16px;width:7rem;height:auto;
   animation:bounce .9s .1s cubic-bezier(.34,1.56,.64,1) both;
   filter:drop-shadow(0 10px 24px rgba(224,136,136,.28))}
 .hero h1{font-family:'Baloo 2',cursive;font-size:clamp(2.5rem,6vw,5rem);font-weight:800;
@@ -74,7 +84,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .hero h1 em{font-style:normal;color:var(--coral-d)}
 .hero-lead{font-size:clamp(.97rem,2.2vw,1.18rem);color:var(--muted);font-weight:600;
   max-width:560px;margin:0 auto 20px;line-height:1.65;animation:fadeD .5s .2s ease both}
-.stars-row{display:flex;justify-content:center;gap:4px;font-size:1.3rem;
+.stars-row{display:flex;justify-content:center;align-items:center;gap:6px;font-size:1.3rem;
   margin-bottom:36px;animation:fadeD .5s .28s ease both}
 
 /* ── WAITLIST ── */
@@ -82,7 +92,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
   animation:fadeU .6s .35s ease both}
 .wl-card{background:var(--w85);backdrop-filter:blur(24px);
   border:1.5px solid rgba(224,136,136,.22);border-radius:28px;padding:36px 32px;box-shadow:var(--shXL)}
-.wl-title{font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:5px}
+.wl-title{font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:5px;display:flex;align-items:center;justify-content:center;gap:.4em}
 .wl-sub{text-align:center;font-size:.83rem;color:var(--muted);font-weight:600;margin-bottom:24px}
 
 .field{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
@@ -96,7 +106,7 @@ select{cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23C07070' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:34px}
 
-.cta{width:100%;padding:15px;margin-top:3px;
+.cta{width:100%;padding:15px;margin-top:3px;display:inline-flex;align-items:center;justify-content:center;gap:.5em;
   background:linear-gradient(135deg,var(--coral) 0%,var(--coral-d) 100%);
   color:#fff;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:900;border:none;
   border-radius:12px;cursor:pointer;box-shadow:0 6px 20px rgba(224,136,136,.4);
@@ -105,7 +115,7 @@ select{cursor:pointer;
 .cta:active{transform:scale(.97)}
 .cta:disabled{opacity:.55;cursor:default;transform:none}
 
-.fine{text-align:center;font-size:.71rem;color:var(--light);font-weight:700;margin-top:10px}
+.fine{text-align:center;font-size:.71rem;color:var(--light);font-weight:700;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:.4em;flex-wrap:wrap}
 .err{display:none;text-align:center;font-size:.77rem;font-weight:800;color:#D05050;margin-top:8px}
 .err.on{display:block}
 
@@ -195,7 +205,7 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
 
 <!-- NAV -->
 <nav>
-  <div class="logo">🦷 ToothBuddy</div>
+  <div class="logo"><img src="tooth.png" alt=""> ToothBuddy</div>
   <div class="nav-right">
     <div class="pill" data-en="Coming Soon" data-zh="即将上线">Coming Soon</div>
   </div>
@@ -203,8 +213,8 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-tag" data-en="🏅 Swift Student Challenge 2025" data-zh="🏅 Swift 学生挑战赛 2025">🏅 Swift Student Challenge 2025</div>
-  <span class="hero-tooth">🦷</span>
+  <div class="hero-tag"><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.5 4.5L18 8l-3.5 2.5L16 15l-4-2.5L8 15l1-4.5L6 8l4.5-1.5L12 2z"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span data-en="Swift Student Challenge 2025" data-zh="Swift 学生挑战赛 2025">Swift Student Challenge 2025</span></div>
+  <img src="tooth.png" alt="ToothBuddy" class="hero-tooth">
 
   <!-- ══ LANGUAGE SWITCHER ══ -->
   <div class="lang-switch-wrap">
@@ -223,14 +233,14 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
      data-zh="实时摄像引导、连续打卡和成就解锁，让刷牙成为每天睡前最期待的仪式 — 全家都适用。">
     Real-time camera guidance, streak tracking, and achievements that make brushing the best part of bedtime — for the whole family.
   </p>
-  <div class="stars-row">⭐⭐⭐</div>
+  <div class="stars-row"><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z"/></svg><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z"/></svg><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z"/></svg></div>
 </section>
 
 <!-- WAITLIST -->
 <section class="wl-wrap">
   <div class="wl-card">
     <div id="form-area">
-      <div class="wl-title" data-en="🎉 Get early access" data-zh="🎉 加入早鸟名单">🎉 Get early access</div>
+      <div class="wl-title"><svg class="ico ico-m" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l.6 3.5 3.5.6-3.5.6-.6 3.5-.6-3.5-3.5-.6 3.5-.6.6-3.5zM5 14l.4 2 2 .4-2 .4-.4 2-.4-2-2-.4 2-.4.4-2zM19 14l.4 2 2 .4-2 .4-.4 2-.4-2-2-.4 2-.4.4-2z"/></svg><span data-en="Get early access" data-zh="加入早鸟名单">Get early access</span></div>
       <div class="wl-sub"
            data-en="Be the first to know when ToothBuddy hits the App Store"
            data-zh="第一时间收到 ToothBuddy 正式上线通知">
@@ -253,16 +263,11 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
            data-zh="请填写所有字段，并输入有效的邮箱地址。">
         Please fill in all fields with a valid email.
       </div>
-      <button class="cta" id="submit-btn" onclick="handleSubmit()"
-              data-en="✨ Join the Waitlist"
-              data-zh="✨ 加入等候名单">
-        ✨ Join the Waitlist
+      <button class="cta" id="submit-btn" onclick="handleSubmit()">
+        <svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.5 4.5L18 9l-3.5 2.5L16 17l-4-2.5L8 17l1-5.5L6 9l4.5-1.5L12 3z"/></svg><span data-en="Join the Waitlist" data-zh="加入等候名单">Join the Waitlist</span>
       </button>
-      <div class="fine"
-           data-en="🔒 No spam. Just a launch notification. Unsubscribe anytime."
-           data-zh="🔒 不发垃圾邮件，仅在上线时通知你，随时可退订。">
-        🔒 No spam. Just a launch notification. Unsubscribe anytime.
-      </div>
+      <div class="fine"><svg class="ico ico-s" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11V7a4 4 0 118 0v4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span data-en="No spam. Just a launch notification. Unsubscribe anytime."
+           data-zh="不发垃圾邮件，仅在上线时通知你，随时可退订。">No spam. Just a launch notification. Unsubscribe anytime.</span></div>
       <div class="cnt-row">
         <div class="cnt-pill" id="cnt-main">–</div>
         <div class="cnt-lbl" data-en="people already on the list" data-zh="人已加入名单">people already on the list</div>
@@ -271,11 +276,11 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
 
     <!-- SUCCESS -->
     <div class="success" id="success-area">
-      <span class="success-ico">🎊</span>
+      <span class="success-ico"><svg class="ico ico-xl" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7-5.5-4h7l2-7z" fill="var(--gold)"/><circle cx="12" cy="12" r="10" fill="none" stroke="var(--coral-d)" stroke-width="1.5"/></svg></span>
       <h3 data-en="You're on the list!" data-zh="加入成功！">You're on the list!</h3>
-      <p data-en="We'll send you one email the moment ToothBuddy hits the App Store. Thank you! 🦷"
-         data-zh="ToothBuddy 正式上线时，我们会立刻通知你。感谢你的支持！🦷">
-        We'll send you one email the moment ToothBuddy hits the App Store. Thank you! 🦷
+      <p data-en="We'll send you one email the moment ToothBuddy hits the App Store. Thank you! <img src='tooth.png' alt='' class='inline-tooth'>"
+         data-zh="ToothBuddy 正式上线时，我们会立刻通知你。感谢你的支持！<img src='tooth.png' alt='' class='inline-tooth'>">
+        We'll send you one email the moment ToothBuddy hits the App Store. Thank you! <img src="tooth.png" alt="" class="inline-tooth">
       </p>
       <div class="cnt-row" style="margin-top:16px">
         <div class="cnt-pill" id="cnt-success">–</div>
@@ -288,115 +293,61 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
 <!-- FOR WHOM -->
 <section class="for-sec">
   <div class="sec-head">
-    <h2 data-en="Built for real families" data-zh="为真实家庭而设计">Built for real families</h2>
-    <p data-en="Whether you're chasing a toddler or building your own habit — ToothBuddy meets you where you are."
-       data-zh="无论你是正在哄孩子刷牙的家长，还是想改善自己习惯的成年人 — ToothBuddy 都适合你。">
-      Whether you're chasing a toddler or building your own habit — ToothBuddy meets you where you are.
+    <h2 data-en="For families" data-zh="为家庭设计">For families</h2>
+    <p data-en="Parents and adults — anyone who wants better brushing."
+       data-zh="家长和成人 — 想要更好刷牙习惯的人。">
+      Parents and adults — anyone who wants better brushing.
     </p>
   </div>
   <div class="for-grid">
     <div class="for-card">
-      <span class="for-ico">👨‍👩‍👧</span>
-      <h3 data-en="For Parents" data-zh="家长专区">For Parents</h3>
-      <p data-en="End the bedtime brushing battle. Star rewards and daily streaks give kids a reason to actually want to brush — no nagging needed."
-         data-zh="告别每晚的刷牙大战！星星奖励和每日连续打卡，让孩子自己主动要求去刷牙 — 不需要再催了。">
-        End the bedtime brushing battle. Star rewards and daily streaks give kids a reason to actually want to brush — no nagging needed.
-      </p>
-      <div class="tags">
-        <span class="tag" data-en="Streak Tracking" data-zh="连续打卡">Streak Tracking</span>
-        <span class="tag" data-en="Star Rewards" data-zh="星星奖励">Star Rewards</span>
-        <span class="tag" data-en="Achievement Badges" data-zh="成就徽章">Achievement Badges</span>
-      </div>
+      <span class="for-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="8" cy="6" r="2.5"/><circle cx="16" cy="6" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M8 10v11M16 10v11M12 16v5"/></svg></span>
+      <h3 data-en="For Parents" data-zh="家长">For Parents</h3>
+      <p data-en="Parents getting kids to brush without the battle."
+         data-zh="让家长轻松带孩子刷牙。">Parents getting kids to brush without the battle.</p>
     </div>
     <div class="for-card">
-      <span class="for-ico">🧑</span>
-      <h3 data-en="For Adults" data-zh="成人用户">For Adults</h3>
-      <p data-en="You know you should brush for 2 minutes. ToothBuddy's live timer and camera preview make sure you actually do — and makes it oddly satisfying."
-         data-zh="你知道应该刷满 2 分钟。ToothBuddy 的实时计时器和摄像头预览确保你真的做到了 — 而且会莫名其妙地感到满足。">
-        You know you should brush for 2 minutes. ToothBuddy's live timer and camera preview make sure you actually do — and makes it oddly satisfying.
-      </p>
-      <div class="tags">
-        <span class="tag" data-en="2-Min Timer" data-zh="2分钟计时">2-Min Timer</span>
-        <span class="tag" data-en="Live Camera" data-zh="实时摄像">Live Camera</span>
-        <span class="tag" data-en="Progress History" data-zh="进度历史">Progress History</span>
-      </div>
+      <span class="for-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/></svg></span>
+      <h3 data-en="For Adults" data-zh="成人">For Adults</h3>
+      <p data-en="Adults building better brushing habits."
+         data-zh="帮助成人养成更好的刷牙习惯。">Adults building better brushing habits.</p>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- FUTURE FEATURES -->
 <section class="feats">
   <div class="sec-head">
-    <h2 data-en="Every feature has a purpose" data-zh="每个功能都有意义">Every feature has a purpose</h2>
-    <p data-en="No bloat. Just the things that actually make brushing better."
-       data-zh="没有冗余功能，只有真正让刷牙变好的设计。">
-      No bloat. Just the things that actually make brushing better.
+    <h2 data-en="Future features" data-zh="未来功能">Future features</h2>
+    <p data-en="Every feature has a purpose. No bloat. Just the things that actually make brushing better."
+       data-zh="每个功能都有意义。没有冗余功能，只有真正让刷牙变好的设计。">
+      Every feature has a purpose. No bloat. Just the things that actually make brushing better.
     </p>
   </div>
   <div class="feats-grid">
     <div class="fc">
-      <span class="fc-ico">📸</span>
-      <h3 data-en="Camera Preview" data-zh="摄像头预览">Camera Preview</h3>
-      <p data-en="See yourself brush in real time. No more missing the spots in the back."
-         data-zh="实时看见自己刷牙的样子，再也不会漏掉后面的死角。">See yourself brush in real time. No more missing the spots in the back.</p>
+      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><circle cx="8" cy="11" r="1.5"/><circle cx="16" cy="11" r="1.5"/><path d="M8 14h8" stroke="currentColor" stroke-width="1" fill="none"/><rect x="10" y="4" width="4" height="2" rx=".5"/></svg></span>
+      <h3 data-en="Gamification" data-zh="游戏化">Gamification</h3>
+      <p data-en="Stars, streaks, achievements, and badges — turn brushing into a game kids actually want to play."
+         data-zh="星星、连续打卡、成就徽章 — 把刷牙变成孩子真正想玩的游戏。">Stars, streaks, achievements, and badges — turn brushing into a game kids actually want to play.</p>
     </div>
     <div class="fc">
-      <span class="fc-ico">⏱️</span>
-      <h3 data-en="Smart Timer" data-zh="智能计时器">Smart Timer</h3>
-      <p data-en="A live progress bar counts up to the dentist-recommended 2 minutes."
-         data-zh="实时进度条倒计时，帮你刷满牙医建议的 2 分钟。">A live progress bar counts up to the dentist-recommended 2 minutes.</p>
+      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="14" height="14" rx="2"/><circle cx="9" cy="9" r="1.5"/><circle cx="15" cy="9" r="1.5"/><rect x="9" y="13" width="6" height="2" rx=".5"/><path d="M12 2v2M8 2v1M16 2v1"/></svg></span>
+      <h3 data-en="AI Brushing Quality" data-zh="AI 刷牙质量检测">AI Brushing Quality</h3>
+      <p data-en="AI-driven feedback on coverage and technique. Know exactly where you missed — and get better every time."
+         data-zh="AI 实时反馈覆盖率和技巧，告诉你哪里没刷到，每次都在进步。">AI-driven feedback on coverage and technique. Know exactly where you missed — and get better every time.</p>
     </div>
     <div class="fc">
-      <span class="fc-ico">⭐</span>
-      <h3 data-en="Star Ratings" data-zh="星级评分">Star Ratings</h3>
-      <p data-en="Earn 1–3 stars per session based on how long and well you brush."
-         data-zh="每次刷牙根据时长获得 1 到 3 颗星，看着满分的成就感爆棚。">Earn 1–3 stars per session based on how long and well you brush.</p>
-    </div>
-    <div class="fc">
-      <span class="fc-ico">🔥</span>
-      <h3 data-en="Daily Streaks" data-zh="每日连续打卡">Daily Streaks</h3>
-      <p data-en="Build your consecutive-day count and keep the flame alive every morning."
-         data-zh="累积连续刷牙天数，让那把火每天都不熄灭。">Build your consecutive-day count and keep the flame alive every morning.</p>
-    </div>
-    <div class="fc">
-      <span class="fc-ico">🏆</span>
-      <h3 data-en="Achievements" data-zh="成就系统">Achievements</h3>
-      <p data-en="Unlock badges and level up your rank as you hit brushing milestones."
-         data-zh="解锁徽章、提升等级，刷牙也有成就感。">Unlock badges and level up your rank as you hit brushing milestones.</p>
-    </div>
-    <div class="fc">
-      <span class="fc-ico">📊</span>
-      <h3 data-en="Session History" data-zh="历史记录">Session History</h3>
-      <p data-en="Review past sessions, average duration, and star performance over time."
-         data-zh="查看每次刷牙记录、平均时长和星级表现，进步看得见。">Review past sessions, average duration, and star performance over time.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="proof">
-  <div class="proof-in">
-    <div class="pi">
-      <span class="pn">2 min</span>
-      <div class="pl" data-en="Dentist-recommended brushing time" data-zh="牙医推荐刷牙时长">Dentist-recommended<br>brushing time</div>
-    </div>
-    <div class="pi">
-      <span class="pn">3 ⭐</span>
-      <div class="pl" data-en="Max stars per session" data-zh="每次刷牙最高星级">Max stars per<br>session</div>
-    </div>
-    <div class="pi">
-      <span class="pn">iOS</span>
-      <div class="pl" data-en="iPhone & iPad native app" data-zh="iPhone & iPad 原生应用">iPhone & iPad<br>native app</div>
-    </div>
-    <div class="pi">
-      <span class="pn">Free</span>
-      <div class="pl" data-en="For early waitlist users" data-zh="早鸟用户免费体验">For early<br>waitlist users</div>
+      <span class="fc-ico"><svg class="ico ico-l" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="8" cy="6" r="2"/><circle cx="16" cy="6" r="2"/><path d="M4 20c0-2.5 1.8-4 4-4s4 1.5 4 4M14 20c0-2.5 1.8-4 4-4s4 1.5 4 4"/><path d="M12 10v4M10 12h4" stroke="currentColor" stroke-width="1.2" fill="none"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span>
+      <h3 data-en="Share with Parents & Dentists" data-zh="家长与牙医数据共享">Share with Parents & Dentists</h3>
+      <p data-en="Export reports and share brushing data with parents or your dentist for better care coordination."
+         data-zh="导出报告，与家长或牙医共享刷牙数据，让护理更协同。">Export reports and share brushing data with parents or your dentist for better care coordination.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  Made with 🦷 + ❤️ · Swift Student Challenge 2025<br>
+  Made with <img src="tooth.png" alt="" class="inline-tooth"> + <svg class="ico ico-s ico-heart" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> · Swift Student Challenge 2025<br>
   © 2025 ToothBuddy · <a href="mailto:hello@toothbuddy.app">hello@toothbuddy.app</a>
 </footer>
 
