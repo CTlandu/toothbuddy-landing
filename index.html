@@ -109,6 +109,27 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
   animation:fadeU .6s .35s ease both}
 .wl-card{background:var(--w85);backdrop-filter:blur(24px);
   border:1.5px solid rgba(224,136,136,.22);border-radius:28px;padding:36px 32px;box-shadow:var(--shXL)}
+
+/* ── DEMO SECTION ── */
+.demo-sec{position:relative;z-index:5;max-width:960px;margin:0 auto 88px;padding:0 24px}
+.demo-sec-head{text-align:center;margin-bottom:40px}
+.demo-sec-head h2{font-family:'Baloo 2',cursive;font-size:1.95rem;font-weight:800;color:var(--ink);margin-bottom:8px}
+.demo-sec-head p{font-size:.87rem;color:var(--muted);font-weight:600}
+.demo-badge{display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,251,245,.92);border:1.5px solid rgba(224,136,136,.22);
+  border-radius:30px;padding:6px 14px;font-size:.72rem;font-weight:800;color:var(--muted);
+  box-shadow:0 2px 10px rgba(224,136,136,.1)}
+.demo-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(251,191,36,.2)}
+.demo-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:stretch}
+.demo-screenshot-col{display:flex;flex-direction:column;justify-content:center;gap:14px}
+.demo-screenshot{width:100%;border-radius:24px;filter:drop-shadow(0 24px 48px rgba(45,32,32,.15))}
+.demo-video-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.demo-video-phone{width:100%;max-width:280px;display:block;border-radius:28px;
+  box-shadow:0 20px 50px rgba(45,32,32,.22);background:#000;
+  aspect-ratio:9/16;object-fit:cover}
+.demo-disclaimer{font-size:.69rem;color:var(--light);font-weight:700;text-align:center;
+  max-width:240px;line-height:1.55}
 .wl-title{font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;text-align:center;margin-bottom:5px;display:flex;align-items:center;justify-content:center;gap:.4em}
 .wl-sub{text-align:center;font-size:.83rem;color:var(--muted);font-weight:600;margin-bottom:24px}
 
@@ -208,6 +229,9 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
   .row2{grid-template-columns:1fr}
   .proof-in{padding:26px 18px}
   .wl-card{padding:28px 20px}
+  .demo-layout{grid-template-columns:1fr;justify-items:center}
+  .demo-screenshot-col{width:100%}
+  .demo-video-phone{max-width:200px}
 }
 @media(max-width:480px){.feats-grid{grid-template-columns:1fr}}
 </style>
@@ -294,6 +318,32 @@ footer a{color:var(--coral-d);text-decoration:none;font-weight:700}
          data-zh="ToothBuddy 正式上线时，我们会立刻通知你。感谢你的支持！<img src='tooth.png' alt='' class='inline-tooth'>">
         We'll send you one email the moment ToothBuddy hits the App Store. Thank you! <img src="tooth.png" alt="" class="inline-tooth">
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO SECTION -->
+<section class="demo-sec">
+  <div class="demo-sec-head">
+    <h2 data-en="See it in action" data-zh="看看实际效果">See it in action</h2>
+    <p data-en="A glimpse of the current build — more features on the way." data-zh="当前版本一瞥，更多功能正在路上。">A glimpse of the current build — more features on the way.</p>
+  </div>
+
+  <div class="demo-badge" style="display:inline-flex;margin:0 auto 28px;display:flex;width:fit-content;margin-left:auto;margin-right:auto;margin-bottom:28px">
+    <span class="demo-badge-dot"></span>
+    <span data-en="Early prototype · Not the final product" data-zh="早期原型 · 非最终成品">Early prototype · Not the final product</span>
+  </div>
+
+  <div class="demo-layout">
+    <!-- 左：App 截图 -->
+    <div class="demo-screenshot-col">
+      <img src="799_1x_shots_so.png" alt="ToothBuddy app screenshots" class="demo-screenshot">
+    </div>
+
+    <!-- 右：演示视频 -->
+    <div class="demo-video-col">
+      <video class="demo-video-phone" src="3月1日.mov" controls playsinline poster="tooth.png"></video>
+      <p class="demo-disclaimer" data-en="Design and features may change before launch." data-zh="正式发布前设计和功能可能调整。">Design and features may change before launch.</p>
     </div>
   </div>
 </section>
